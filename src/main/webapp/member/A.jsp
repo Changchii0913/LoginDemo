@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page 修改後的commit2223333</title>
+        <title>JSP Page 修改後的commit2223</title>
     </head>
     <body>
         <h1>PAGE A</h1>
