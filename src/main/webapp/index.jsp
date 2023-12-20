@@ -13,7 +13,7 @@
     </head>
     <body>
         <h1>會員登入系統</h1>
-        <a href="/LoginDemo1/member/login.jsp">會員登入</a><hr>
+        <a href="/LoginDemo1/login.jsp">會員登入</a><hr>
         session id<%=session.getId()%><br>
         瀏覽器版本：<%= request.getHeader("User-Agent")%><br>
         瀏覽器語系：<%= request.getHeader("Accept-Language")%><br>

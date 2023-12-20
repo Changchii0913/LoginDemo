@@ -9,7 +9,7 @@
     </head>
     <body>
         <h1>
-            <form action="../Checklogin">
+            <form action="Checklogin2">
                 帳號:<input type="text" name="username" value="" /><br>
                 密碼:<input type="password" name="passwd" value="" /><br>
                 <input type="submit" value="登入" />
