@@ -30,6 +30,8 @@ public class Checklogin2 extends HttpServlet {
         username = request.getParameter("username");
         passwd = request.getParameter("passwd");
         sql = "SELECT * FROM user WHERE NAME='" + username + "' AND passwd='" + passwd + "';";
+        String message="hello您好";
+        
         // 1. 載入資料庫驅動
         try{
             Class.forName("org.mariadb.jdbc.Driver");            
@@ -46,10 +48,11 @@ public class Checklogin2 extends HttpServlet {
            rs = stmt.executeQuery(sql);
            if( rs.next() ) {
                loginResult = true;
-                 RequestDispatcher disp= request.getRequestDispatcher("A.jsp");
+                 RequestDispatcher disp= request.getRequestDispatcher("A.jsp?msg="+java.net.URLEncoder.encode(message,"UTF-8"));
                disp.forward(request,response);
            }
             else{
+               request.setAttribute("test","請回去確認帳號");
                request.getRequestDispatcher ("D.jsp").forward(request,response);
            }
            

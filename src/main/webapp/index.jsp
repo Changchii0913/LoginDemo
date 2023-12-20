@@ -14,12 +14,15 @@
     <body>
         <h1>會員登入系統</h1>
         <a href="/LoginDemo1/login.jsp">會員登入</a><hr>
+        <a href="https://www.google.com/search?q=servlet">查詢servlet</a><hr>
         session id<%=session.getId()%><br>
         瀏覽器版本：<%= request.getHeader("User-Agent")%><br>
         瀏覽器語系：<%= request.getHeader("Accept-Language")%><br>
         使用者ip:<%= request.getRemoteAddr()%><br>
         Tomcat ip:<%=request.getLocalAddr()%><br>
         目前位置:<%=request.getRequestURI()%><hr>
+        <h1>模型</h1>
+        <a href="productQuery.jsp">模型查詢</a><hr>
         <a href="member/A.jsp">PAGE A</a>
     </body>
 </html>

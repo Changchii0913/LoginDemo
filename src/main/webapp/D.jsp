@@ -13,6 +13,7 @@
     </head>
     <body>
         <h1>PAGE D 從哪連過來?</h1>
-        從:<%= request.getHeader("Referer")%>
+        從:<%= request.getHeader("Referer")%><br>
+        <%="警告消息"+request.getAttribute("test")%>
     </body>
 </html>

@@ -1,6 +1,6 @@
 <%-- 
-    Document   : D
-    Created on : 2023年12月15日, 下午4:44:47
+    Document   : productQuery
+    Created on : 2023年12月20日, 下午3:40:29
     Author     : student
 --%>
 
@@ -12,8 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>PAGE D 從哪連過來?</h1>
-        從:<%= request.getHeader("Referer")%><br>
-        <%="警告消息"+request.getAttribute("test")%>
+        <h1>Hello World!</h1>
     </body>
 </html>
