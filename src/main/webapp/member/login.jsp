@@ -9,9 +9,9 @@
     </head>
     <body>
         <h1>
-            <form action="/LoginDemo1/member/checkpass.jsp">
+            <form action="../Checklogin">
                 帳號:<input type="text" name="username" value="" /><br>
-                密碼:<input type="password" name="password" value="" /><br>
+                密碼:<input type="password" name="passwd" value="" /><br>
                 <input type="submit" value="登入" />
                 <input type="reset" value="清除" />
             </form>

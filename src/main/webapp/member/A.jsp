@@ -13,6 +13,7 @@
     </head>
     <body>
         <h1>PAGE A</h1>
+        <hr><!-- comment -->
         <a href="B.jsp">PAGE B</a>
     </body>
 </html>
