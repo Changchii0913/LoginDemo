@@ -4,6 +4,7 @@
     Author     : student
 --%>
 
+<%@page import="com.mycompany.logindemo1.ProductModel"%>
 <%@page import="java.util.*"%>
 <%@page import="com.mycompany.logindemo1.DBConGenerator"%>
 
@@ -37,6 +38,7 @@
            Statement stmt = null;
            String productLine = null;
            String shopurl=null;
+           String sql=null;
            HashMap<String,String> userMap = new HashMap<>();  
        %>
        <%
@@ -95,9 +97,22 @@
               <th>加入購物車</th>
             </tr>
        <%--   rs.next 迴圈開始 --%> 
-       <% try {
+       <%
+                ArrayList rows=new ArrayList(); 
+                try {
+                sql="SELECT productCode, productName, productScale, quantityInStock FROM classicmodels";
             while(rs.next() ) {
             shopurl="Toshopping.jsp?pid="+rs.getString("productCode")+"&pname="+rs.getString("productName");
+           ProductModel pml=new ProductModel();
+           pml.ProductCode=rs.getString("productCode");
+           pml.ProductName=rs.getString("productName");
+           pml.ProductScale=rs.getString("productScale");
+           pml.qty=rs.getInt("quantityInStock");
+           rows.add(pml);
+          
+           
+           
+            
        %>
             <tr>
               <td><%= rs.getString("productCode") %></td>
@@ -106,8 +121,9 @@
               <td><%= rs.getInt("quantityInStock") %></td>
               <td><%= rs.getBigDecimal("MSRP").toString() %></td>
               <td><a href="<%=shopurl%>">加入購物車</a></td>
-              <%HttpSession session1 = request.getSession();
-              session1.setAttribute("pid", "pame");%>
+              <%HttpSession session1 = request.getSession();%>
+            <% session1.setAttribute("pid", rs.getString("productCode"));
+   session1.setAttribute("pname", rs.getString("productName"));%>
             </tr>
             
         <% }

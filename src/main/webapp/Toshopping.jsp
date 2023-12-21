@@ -11,7 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Toshopping</title>
     </head>
-    <body>
+    
         <h1>Hello World!</h1>
         商品代號:<%= request.getParameter("pid")    %>
         商品名稱:<%= request.getParameter("pname")%><br>
@@ -26,6 +26,7 @@
     // 將資訊存儲在 session 中
     session.setAttribute("pid", pid);
     session.setAttribute("pname", pname);
-%>>
-    </body>
+%>
+
+    
 </html>

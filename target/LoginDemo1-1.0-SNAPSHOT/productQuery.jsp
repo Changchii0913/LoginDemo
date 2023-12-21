@@ -15,7 +15,7 @@
         <h1>巨匠模型專賣店</h1>
         <hr/>
         <h3>請選擇模型種類</h3>
-        <a href="productList.jsp?pl=1">Classic 經典汽車模型</a><br/>
+        <a href="ProductToObject.jsp?pl=1">Classic 經典汽車模型</a><br/>
         <a href="productList.jsp?pl=2">Motorcycle 重機模型</a><br>
         <a href="productList.jsp?pl=3">Planes 飛機</a><br>
         <a href="productList.jsp?pl=4">Trucks and Buses 卡車</a><br>
