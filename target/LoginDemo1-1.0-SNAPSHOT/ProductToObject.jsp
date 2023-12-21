@@ -96,7 +96,7 @@
               <td><%= pm.ProductScale %></td>
               <td><%= pm.qty %></td>
               
-              <td><a href="ToShoppingCart.jsp">加入購物</a> </td>
+              <td><a href="ToShoppingCart.jsp   ">加入購物</a> </td>
             </tr>
             <% } %>
     </table>

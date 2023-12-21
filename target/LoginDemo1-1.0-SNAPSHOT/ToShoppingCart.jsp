@@ -4,9 +4,8 @@
     Author     : student
 --%>
 
-<%@page import="com.mycompany.logindemo1.CartItem"%>
 <%@page import="java.util.ArrayList"%>
-
+<%@page import="com.mycompany.logindemo1.CartItem"%>
 <%@page import="com.mycompany.logindemo1.ProductModel"%>
 <%@page import="java.util.Map"%>
 <%@page import="java.util.HashMap"%>
@@ -21,6 +20,7 @@
        // 購物車
        ArrayList<CartItem> shoppingCart = null;
        String pid = null, pname = null;
+       boolean isDuplicate = false;
     %>
     <%
        // 檢查使用者現在的狀態
@@ -41,18 +41,27 @@
         pname = request.getParameter("pname") ;
         // 檢查 是否已經放在購物車內 
         if( shoppingCart.size() == 0 ) {
+            //如果購物車空的 就直接新增
             CartItem citem = new CartItem(pid,pname,1);            
             shoppingCart.add(citem);
         } else {
+        //如果購物車已有的 先檢查是否有重複
             for(CartItem cti : shoppingCart) {
                 if( cti.getProductCode().equals(pid)) {
+                    //有重複 把 CartItem 數量+1  
                     cti.setQty( cti.getQty()+1 );
-                } else {
-                    CartItem citem = new CartItem(pid,pname,1);      
-                    shoppingCart.add(citem);
-                }
+                    isDuplicate = true; 
+                    // 並設定判斷旗號 發現是重複的
+                } 
+            }
+            // 檢查結果如果沒有重複  則新增
+            if( ! isDuplicate) {
+                CartItem citem = new CartItem(pid,pname,1);            
+                shoppingCart.add(citem);
+                isDuplicate = false;
             }
         }
+        
         //
     %>
     
