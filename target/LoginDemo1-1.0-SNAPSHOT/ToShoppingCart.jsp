@@ -1,11 +1,15 @@
 <%-- 
-    Document   : ProductQuery
-    Created on : 2023年12月20日, 下午3:29:31
+    Document   : ToShoppingCart
+    Created on : 2023年12月21日, 上午9:37:34
     Author     : student
 --%>
 
-<%@page import="java.util.ArrayList"%>
 <%@page import="com.mycompany.logindemo1.CartItem"%>
+<%@page import="java.util.ArrayList"%>
+
+<%@page import="com.mycompany.logindemo1.ProductModel"%>
+<%@page import="java.util.Map"%>
+<%@page import="java.util.HashMap"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -17,7 +21,6 @@
        // 購物車
        ArrayList<CartItem> shoppingCart = null;
        String pid = null, pname = null;
-       boolean isDuplicate = false;
     %>
     <%
        // 檢查使用者現在的狀態
@@ -44,16 +47,12 @@
             for(CartItem cti : shoppingCart) {
                 if( cti.getProductCode().equals(pid)) {
                     cti.setQty( cti.getQty()+1 );
-                    isDuplicate = true;
-                } 
-            }
-            if( ! isDuplicate) {
-                CartItem citem = new CartItem(pid,pname,1);            
-                shoppingCart.add(citem);
-                isDuplicate = false;
+                } else {
+                    CartItem citem = new CartItem(pid,pname,1);      
+                    shoppingCart.add(citem);
+                }
             }
         }
-        
         //
     %>
     

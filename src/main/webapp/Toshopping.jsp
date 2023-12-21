@@ -12,21 +12,9 @@
         <title>Toshopping</title>
     </head>
     
-        <h1>Hello World!</h1>
+        <h1>購買品項</h1>
         商品代號:<%= request.getParameter("pid")    %>
         商品名稱:<%= request.getParameter("pname")%><br>
-      <%
-    // 獲取或創建 session
-    HttpSession session1 = request.getSession();
-    
-    // 獲取表單提交的資訊
-    String pid = request.getParameter("pid");
-    String pname = request.getParameter("pname");
-    
-    // 將資訊存儲在 session 中
-    session.setAttribute("pid", pid);
-    session.setAttribute("pname", pname);
-%>
-
+      
     
 </html>
